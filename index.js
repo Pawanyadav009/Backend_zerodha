@@ -37,19 +37,33 @@ mongoose
 
 // --------------------------------------------------
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  express_session({
-    secret: process.env.SESSION_KEY || "fdgfghknby7yguhh856789dftio",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
-      httpOnly: true,
-      secure: true,
-      sameSite: "none"
-    },
-  }),
-);
+// app.use(
+//   express_session({
+//     secret: process.env.SESSION_KEY || "fdgfghknby7yguhh856789dftio",
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       maxAge: 1000 * 60 * 60 * 24, // 1 day
+//       httpOnly: true,
+//       secure: true,
+//       sameSite: "none"
+//     },
+//   }),
+// );
+
+app.set("trust proxy", 1);
+
+app.use(session({
+  secret: process.env.SESSION_KEY,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 1000 * 60 * 60 * 24
+  }
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
