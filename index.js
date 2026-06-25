@@ -39,14 +39,14 @@ mongoose
 app.use(express.urlencoded({ extended: true }));
 app.use(
   express_session({
-    secret: process.env.SESSION_KEY,
+    secret: process.env.SESSION_KEY || "fdgfghknby7yguhh856789dftio",
     resave: false,
     saveUninitialized: false,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24, // 1 day
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none"
     },
   }),
 );
