@@ -20,13 +20,13 @@ const PORT = process.env.PORT || 5405;
 const URL = process.env.MONGO_URL;
 
 // ---------
-
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  }),
-);
+app.use(cors())
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173",
+//     credentials: true,
+//   }),
+// );
 app.use(bodyParser.json());
 // ---------
 
@@ -39,7 +39,7 @@ mongoose
 app.use(express.urlencoded({ extended: true }));
 app.use(
   express_session({
-    secret: "secret",
+    secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: false,
     cookie: {
