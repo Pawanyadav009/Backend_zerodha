@@ -79,6 +79,10 @@ const isloggedIn=((req,res,next)=>{
 // ==========================================
 
 app.get("/me",(req,res)=>{
+  // -------------------------------
+   console.log("ME SESSION:", req.sessionID);
+  console.log("ME AUTH:", req.isAuthenticated());
+  // -------------------------------
   if(req.isAuthenticated()){
     res.json({
       loggedIn : true,
@@ -282,9 +286,14 @@ app.post("/login", (req, res, next) => {
             message: "Login failed",
           });
         }
-
+// -------------test purpose----------------
   console.log("SESSION ID:", req.sessionID);
   console.log("USER:", req.user);
+
+  console.log("LOGIN SESSION ID:", req.sessionID);
+  console.log("AUTH:", req.isAuthenticated());
+// -------------------------------------------------
+
 
     
         return res.json({
