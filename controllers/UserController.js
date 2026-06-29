@@ -1,7 +1,6 @@
 const { User } = require("./model/UserModel");
-
-
 import passport from "passport";
+
     export const me = (req,res)=>{
       if(req.isAuthenticated()){
         res.json({
