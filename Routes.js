@@ -13,7 +13,7 @@ router.get("/allHoldings",isloggedIn, allHoldings);
 
 router.get("/allPositons",isloggedIn,allPositons);
 
-router.post("/newOrder", isloggedIn, );
+router.post("/newOrder", isloggedIn, newOrder);
 
 router.get("/orders",isloggedIn,orders)
 
