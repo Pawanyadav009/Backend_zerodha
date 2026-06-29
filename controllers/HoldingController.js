@@ -1,4 +1,4 @@
-const { HoldingModel } = require("../model/HoldingsModel");
+import { HoldingModel } from "../model/HoldingsModel.js"
 
 
 export const allHoldings = async (req, res) => {

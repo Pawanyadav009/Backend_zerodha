@@ -1,5 +1,5 @@
-const { OrdersModel } = require("../model/OrdersModel");
-const { HoldingModel } = require("../model/HoldingsModel");
+import { OrdersModel } from"../model/OrdersModel.js"
+import { HoldingModel } from"../model/HoldingsModel.js"
 
 
 export const newOrder = async (req, res) => {

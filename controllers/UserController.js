@@ -1,4 +1,4 @@
-import { User } from  '../model/UserModel'
+import { User } from  '../model/UserModel.js'
 import passport from "passport";
 
     export const me = (req,res)=>{
