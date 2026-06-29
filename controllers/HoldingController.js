@@ -1,4 +1,4 @@
-const { HoldingModel } = require("./model/HoldingsModel");
+const { HoldingModel } = require("../model/HoldingsModel");
 
 
 export const allHoldings = async (req, res) => {
