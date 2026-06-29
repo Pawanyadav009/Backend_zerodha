@@ -6,11 +6,8 @@ const { User } = require("./model/UserModel");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const express_session = require("express-session");
-const { HoldingModel } = require("./model/HoldingsModel");
-const { PositionModel } = require("./model/PositionsModel");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { OrdersModel } = require("./model/OrdersModel");
 const { isloggedIn } = require("./middleWare");
 const router = require("./Routes");
 
